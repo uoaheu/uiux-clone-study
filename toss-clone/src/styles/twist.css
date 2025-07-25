@@ -1,0 +1,34 @@
+.twist-spinner-wrapper {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.twist-spinner {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.twist-spinner-wrapper.loading .twist-spinner {
+  animation: spin 1s linear infinite;
+}
+
+.twist-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 90deg, #4f46e5, #3b82f6, #4f46e5);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
